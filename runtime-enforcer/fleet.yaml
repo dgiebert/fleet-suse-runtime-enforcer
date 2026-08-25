@@ -1,0 +1,20 @@
+defaultNamespace: runtime-enforcer
+
+# namespaceLabels:
+#   pod-security.kubernetes.io/enforce: restricted
+#   pod-security.kubernetes.io/enforce-version: latest
+#   pod-security.kubernetes.io/audit: restricted
+#   pod-security.kubernetes.io/audit-version: latest
+#   pod-security.kubernetes.io/warn: restricted
+#   pod-security.kubernetes.io/warn-version: latest
+
+helm:
+  releaseName: runtime-enforcer
+  chart: runtime-enforcer
+  version: 0.1.10
+  repo: https://rancher-sandbox.github.io/runtime-enforcer/
+
+dependsOn:
+  - selector:
+      matchLabels:
+        app: cert-manager-csi-driver

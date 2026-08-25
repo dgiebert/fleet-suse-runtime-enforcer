@@ -14,6 +14,9 @@ helm:
   version: 0.16.0
   repo: https://charts.jetstack.io
 
+labels:
+  app: cert-manager-csi-driver
+
 dependsOn:
   - selector:
       matchLabels:
