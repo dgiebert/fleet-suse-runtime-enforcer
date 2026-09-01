@@ -1,0 +1,30 @@
+defaultNamespace: sbomscanner
+
+# namespaceLabels:
+#   pod-security.kubernetes.io/enforce: restricted
+#   pod-security.kubernetes.io/enforce-version: latest
+#   pod-security.kubernetes.io/audit: restricted
+#   pod-security.kubernetes.io/audit-version: latest
+#   pod-security.kubernetes.io/warn: restricted
+#   pod-security.kubernetes.io/warn-version: latest
+
+helm:
+  releaseName: sbomscanner
+  chart: sbomscanner
+  version: 0.12.0
+  repo:  https://charts.kubewarden.io
+  values:
+    controller:
+      replicas: 1
+      storage:
+        replicas: 1
+        postgres:
+          cnpg:
+            instances: 1
+      worker:
+        replicas: 1
+
+dependsOn:
+  - selector:
+      matchLabels:
+        app: cloudnative-pg

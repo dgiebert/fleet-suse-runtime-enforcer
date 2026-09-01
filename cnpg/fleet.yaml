@@ -1,0 +1,18 @@
+defaultNamespace: cnpg-system
+
+# namespaceLabels:
+#   pod-security.kubernetes.io/enforce: restricted
+#   pod-security.kubernetes.io/enforce-version: latest
+#   pod-security.kubernetes.io/audit: restricted
+#   pod-security.kubernetes.io/audit-version: latest
+#   pod-security.kubernetes.io/warn: restricted
+#   pod-security.kubernetes.io/warn-version: latest
+
+helm:
+  releaseName: cloudnative-pg
+  chart: cloudnative-pg
+  version:  0.29.0
+  repo:  https://cloudnative-pg.github.io/charts
+
+labels:
+  app: cloudnative-pg
