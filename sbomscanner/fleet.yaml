@@ -16,13 +16,13 @@ helm:
   values:
     controller:
       replicas: 1
-      storage:
-        replicas: 1
-        postgres:
-          cnpg:
-            instances: 1
-      worker:
-        replicas: 1
+    storage:
+      replicas: 1
+    postgres:
+      cnpg:
+        instances: 1
+    worker:
+      replicas: 1
 
 dependsOn:
   - selector:
